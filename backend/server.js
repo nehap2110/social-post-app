@@ -35,11 +35,8 @@ const app = express();
 // In production, restrict origin to your actual domain.
 app.use(
   cors({
-    origin:
-      process.env.NODE_ENV === "production"
-        ? process.env.CLIENT_URL || "https://social-post-app-coral.vercel.app"
-        : "http://localhost:3000",
-    credentials: true, // allow cookies / auth headers
+    origin: process.env.CLIENT_URL,
+    credentials: true,
   })
 );
 
