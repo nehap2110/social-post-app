@@ -37,7 +37,7 @@ app.use(
   cors({
     origin:
       process.env.NODE_ENV === "production"
-        ? process.env.CLIENT_URL || "https://your-production-domain.com"
+        ? process.env.CLIENT_URL || "https://social-post-app-coral.vercel.app"
         : "http://localhost:3000",
     credentials: true, // allow cookies / auth headers
   })
