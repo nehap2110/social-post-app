@@ -71,7 +71,16 @@ const signup = async (req, res, next) => {
       user: sanitizeUser(user),
     });
   } catch (error) {
-    next(error); // passed to errorHandler middleware
+    //next(error); // passed to errorHandler middleware
+
+    console.error("FULL ERROR:", error);
+  console.error(error.stack);
+
+  return res.status(500).json({
+    success: false,
+    message: error.message,
+    stack: error.stack,
+  });
   }
 };
 
